@@ -14,7 +14,6 @@ has_and_belongs_to_many :followed_by,
 	association_foreign_key: :follower_id
 	
 validates :name, presence: true
-validates :email, uniqueness: true
 validates :email, uniqueness: { case_sensitive: false}
 	validates :password, length: {minimum: 8}, if: :strong?
 		def strong?

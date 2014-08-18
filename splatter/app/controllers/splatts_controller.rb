@@ -39,6 +39,7 @@ class SplattsController < ApplicationController
 
     head :no_content
   end
+  
   private
   def splatts_params(params)
   params.permit(:body, :user_id)
