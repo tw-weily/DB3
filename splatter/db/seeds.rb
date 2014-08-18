@@ -11,3 +11,9 @@ User.create(name: 'Sam', email: 'sam@example.com', password: 'password2', blurb:
 User.create(name: 'Sarah', email: 'sarah@example.com', password: 'password3', blurb: 'example blurb')
 User.create(name: 'Geoff', email: 'geoff@example.com', password: 'password4', blurb: 'example blurb')
 User.create(name: 'James', email: 'james@example.com', password: 'password5', blurb: 'example blurb')
+
+Splatt.create(body: 'Hello World', user_id: [0])
+Splatt.create(body: 'Something', user_id: [1])
+Splatt.create(body: 'Hurrah!!', user_id: [2])
+Splatt.create(body: 'Groovy!', user_id: [3])
+Splatt.create(body: 'Blah', user_id: [4]) 
