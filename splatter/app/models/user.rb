@@ -13,13 +13,13 @@ has_and_belongs_to_many :followed_by,
 	foreign_key: :followed_id,
 	association_foreign_key: :follower_id
 	
-validates :name, presence: true
-validates :email, uniqueness: { case_sensitive: false}
-	validates :password, length: {minimum: 8}, if: :strong?
-		def strong?
-			password =~ /.*\d+.*/ && \
-			password =~ /.*[a-z]+.*/ && \
-			password =~ /.*[A-Z].*/
-		end
+	validates :name, presence: true
+	validates :email, uniqueness: { case_sensitive: false}
+	validates :password, length: {minimum: 8} #if: :strong?
+	
+	def strong?
+		password =~ /.*\d+.*/ && \
+		password =~ /.*[a-z]+.*/ && \
+		password =~ /.*[A-Z].*/
 	end
-$end
+end

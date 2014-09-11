@@ -1,5 +1,5 @@
 class Splatt < ActiveRecord::Base
   belongs_to :user
   
-  validates body, presence: true
+  #validates body, presence: true
 end

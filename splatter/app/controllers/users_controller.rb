@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+	
   # GET /users
   # GET /users.json
   def index
@@ -95,12 +95,16 @@ class UsersController < ApplicationController
   
   # GET /users/splatts-feed/1
   def splatts_feed
-	@feed = splatt.find_by_sql('Select * From User.splatts')
+	@feed = splatt.find_by_sql('Select splatts.body, splatts.user_id, splatts.id, splatts.created_at FROM splatts JOIN follows ON follows.followed_id=splatts.user_id WHERE follows.follower_id=#{params[:id]} ORDER BY created_at DESC')
 	render json: @feed
   end
   
   private
   def user_params(params)
 	params.permit(:email, :password, :name, :blurb)
+  end
+  
+  def set_headers
+	headers['Access-Control-Allow-Origin'] = '*';
   end
 end
